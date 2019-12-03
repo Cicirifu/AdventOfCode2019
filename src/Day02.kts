@@ -1,5 +1,5 @@
-import java.nio.file.Files
-import java.nio.file.Paths
+
+import java.io.File
 
 class CPU(val memory: IntArray, var ip: Int = 0) {
     object Opcodes {
@@ -44,7 +44,7 @@ class CPU(val memory: IntArray, var ip: Int = 0) {
 }
 
 val initialMemory by lazy {
-    Files.readAllLines(Paths.get("Day02.txt")).asSequence()
+    File("Day02.txt").readLines(Charsets.UTF_8).asSequence()
         .flatMap { it.splitToSequence(",") }
         .map { it.toInt() }
         .toList().toIntArray()
