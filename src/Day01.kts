@@ -1,9 +1,9 @@
-import java.nio.file.Files
-import java.nio.file.Paths
+
+import java.io.File
 import kotlin.math.max
 
 val input by lazy {
-    Files.readAllLines(Paths.get("Day01.txt")).asSequence()
+    File("Day01.txt").readLines(Charsets.UTF_8)
         .map { it.toInt() }
 }
 
