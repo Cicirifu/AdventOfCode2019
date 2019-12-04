@@ -113,8 +113,10 @@ val closestIntersection = intersections
     .filter { it.coord.manhattan() != 0 }
     .minBy { it.coord.manhattan() }!!
 println("Assignment A: closest intersection @ ${closestIntersection.coord}, distance: ${closestIntersection.coord.manhattan()}")
+require(closestIntersection.coord.manhattan() == 316)
 
 val shortestPath = intersections
     .filter { it.coord.manhattan() != 0 }
     .minBy { it.lengthA + it.lengthB }!!
 println("Assignment B: shortest intersection @ ${shortestPath.coord}, length: ${shortestPath.lengthA + shortestPath.lengthB}")
+require(shortestPath.lengthA + shortestPath.lengthB == 16368)
